@@ -1,28 +1,21 @@
 package pl.edu.wat.myapplication;
 
-import android.app.Activity;
-import android.content.ClipData;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.Toast;
-
-import static android.content.ClipData.*;
 
 
 public class DrawerActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private NavigationDrawerFragment mNavigationDrawerFragment;
-    private CharSequence mTitle;
+    private CharSequence mTitlee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +25,7 @@ public class DrawerActivity extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitlee = getTitle();
 
 
         // Set up the drawer.
@@ -76,19 +69,19 @@ public class DrawerActivity extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 0:
-                mTitle = "Poniedziałek";
+                mTitlee = "Poniedziałek";
                 break;
             case 1:
-                mTitle = "Wtorek";
+                mTitlee = "Wtorek";
                 break;
             case 2:
-                mTitle = "Środa";
+                mTitlee = "Środa";
                 break;
             case 3:
-                mTitle = "Czwartek";
+                mTitlee = "Czwartek";
                 break;
             case 4:
-                mTitle = "Piątek";
+                mTitlee = "Piątek";
                 break;
 
         }
@@ -98,7 +91,7 @@ public class DrawerActivity extends ActionBarActivity
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        actionBar.setTitle(mTitlee);
     }
 
 
