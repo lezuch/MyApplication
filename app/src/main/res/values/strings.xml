@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Dzień</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">About</string>
+    <string name="title_activity_logowanie">Home</string>
+    <string name="title_activity_drawer">Home</string>
+
+    <string name="title_section1">Poniedziałek</string>
+    <string name="title_section2">Wtorek</string>
+    <string name="title_section3">Środa</string>
+    <string name="title_section4">Czwartek</string>
+    <string name="title_section5">Piątek</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Opcje</string>
+    <string name="Powitanie">Witaj</string>
+    <string name="PowrótDoLogowania">Logout</string>
+    <string name="WybierzDzień">Wybierz dzień</string>
+    <string name="Headding">Password</string>
+    <string name="HintImie">Imię</string>
+    <string name="HintSurname">Naziwsko</string>
+    <string name="Login">Zaloguj</string>
+    <string name="Logout">Logout</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Settings:</string>
+    <string name="Register">Zarejestruj</string>
+    <string name="MyAccount">My Account</string>
+    <string name="title_activity_my_account">MyAccount</string>
+    <string name="Settings">Settings:</string>
+    <string name="title_activity_photo_pager">PhotoPagerActivity</string>
+    <string name="title_activity_on_activity_result">onActivityResult</string>
+    <string name="About">About</string>
+    <string name="HintLogin">Login</string>
+    <string name="HintPassword">Password</string>
+</resources>

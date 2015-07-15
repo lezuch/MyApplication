@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="pl.edu.wat.myapplication.LogowanieActivity">
+    <item android:id="@+id/action_example"
+        android:title="@string/action_example"
+        app:showAsAction="withText|always" />
+    <item android:id="@+id/About"
+        android:title="@string/About"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_logout"
+        android:title="@string/Logout"
+        android:onClick="onLogoutClick"
+        android:orderInCategory="99"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_MyAccount"
+        android:onClick="onMyAccountClick"
+        android:title="@string/MyAccount"
+        android:orderInCategory="98"
+        app:showAsAction="never" />
+
+</menu>
