@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +40,8 @@ public class MainActivity extends ActionBarActivity {
     EditText logEditText;
     TextView title;
     CheckBox rememberMe;
+    RadioGroup radioSexGroup;
+    RadioButton radioSexButton;
     private Button btnSave;
     private static final String PREFERENCES_SURNAME = "myPreferences";
     private static final String PREFERENCES_TEXT_LOGIN = "textField";
@@ -187,6 +191,11 @@ public class MainActivity extends ActionBarActivity {
                         EditText editPassword = (EditText) view.findViewById(R.id.password);
                         String pass;
                         pass = editPassword.getText().toString();
+                        radioSexGroup = (RadioGroup) view.findViewById(R.id.gender);
+                        int selectedId = radioSexGroup.getCheckedRadioButtonId();
+                        radioSexButton = (RadioButton) view.findViewById(selectedId);
+                        String gender = (String) radioSexButton.getText();
+
 
                         if (login.isEmpty() || name.isEmpty() || pass.isEmpty() || surname.isEmpty()) {
                             showToast("Wszystkie pola muszą być wypełnione");
@@ -202,6 +211,7 @@ public class MainActivity extends ActionBarActivity {
                                 try {
                                     User user = realm.createObject(User.class); // Create a new object
                                     user.setName(name);
+                                    user.setMale(gender);
                                     user.setSurname(surname);
                                     user.setPassword(pass);
                                     user.setLogin(login);

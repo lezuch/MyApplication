@@ -37,6 +37,9 @@ public class MyAccountActivity extends ActionBarActivity {
     ImageView avatar;
     Button okno;
     int REQUEST_CODE;
+    TextView wiek;
+    TextView wzrost;
+    TextView waga;
 
     @Override
     protected void onResume() {
@@ -48,6 +51,10 @@ public class MyAccountActivity extends ActionBarActivity {
                 .findAll();
         Bitmap myBitmap = BitmapFactory.decodeFile(result2.get(0).getUrlAwatara());
         avatar.setImageBitmap(myBitmap);
+        wiek.setText(String.valueOf(loggedUser.getWiek()));
+        wzrost.setText(String.valueOf(loggedUser.getWzrost()));
+        waga.setText(String.valueOf(loggedUser.getWaga()));
+
     }
 
     @Override
@@ -56,6 +63,20 @@ public class MyAccountActivity extends ActionBarActivity {
         setContentView(R.layout.activity_my_account);
         avatar = (ImageView) findViewById(R.id.imageView2);
         okno = (Button) findViewById(R.id.Awatar);
+        wiek =(TextView)findViewById(R.id.textWiek);
+        wzrost=(TextView)findViewById(R.id.textWzrost);
+        waga=(TextView)findViewById(R.id.textWaga);
+
+        User loggedUser =  SessionUser.getInstance().getUser();
+        Realm realm=Realm.getInstance(getApplicationContext());
+        RealmResults<User> result2 = realm.where(User.class)
+                .equalTo("login", loggedUser.getLogin())
+                .findAll();
+        wiek.setText(String.valueOf(loggedUser.getWiek()));
+        wzrost.setText(String.valueOf(loggedUser.getWzrost()));
+        waga.setText(String.valueOf(loggedUser.getWaga()));
+
+
         okno.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 showDialog(ALERT_DIALOG1);
@@ -180,11 +201,50 @@ public class MyAccountActivity extends ActionBarActivity {
         }
     }
 
-
-
-
-
-
-
-
-}
+    public void onAktualizujDane(View view) {
+        boolean wrapInScrollView = true;
+        new MaterialDialog.Builder(this)
+                .title("Moje dane")
+                .customView(R.layout.custom_view_dane, wrapInScrollView)
+                .positiveText("Zatwierdź")
+                .callback(new MaterialDialog.ButtonCallback() {
+                    @Override
+                    public void onPositive(MaterialDialog dialog) {
+                        super.onPositive(dialog);
+                        View view = (View) dialog.getCustomView();
+                        EditText age = (EditText) view.findViewById(R.id.wiek);
+                        String wiekString ;
+                        wiekString= age.getText().toString();
+                        int wiek=Integer.parseInt(wiekString);
+                        EditText waga = (EditText) view.findViewById(R.id.waga);
+                        String wagaString ;
+                        wagaString= waga.getText().toString();
+                        float weight=Float.parseFloat(wagaString);
+                        EditText wzrost = (EditText) view.findViewById(R.id.wzrost);
+                        String wzrostString ;
+                        wzrostString= wzrost.getText().toString();
+                        float height=Float.parseFloat(wzrostString);
+                        Realm realm = Realm.getInstance(getApplicationContext());
+                      //  realm.beginTransaction();
+                        try {
+                            User loggedUser = SessionUser.getInstance().getUser();
+                            realm.beginTransaction();
+                            RealmResults<User> r = realm.where(User.class)
+                                    .equalTo("login", loggedUser.getLogin()).findAll();
+                            User user = r.get(0);
+                            user.setWaga(weight);
+                            user.setWiek(wiek);
+                            user.setWzrost(height);
+                            SessionUser.getInstance().getUser().setWaga(weight);
+                            SessionUser.getInstance().getUser().setWiek(wiek);
+                            SessionUser.getInstance().getUser().setWzrost(height);
+                            realm.commitTransaction();
+                            showToast("Dane zaktualizowane");
+                        } catch (Exception e) {
+                        }
+                    }
+                    })
+                    .negativeText("Anuluj")
+                    .show();
+                    }
+                }

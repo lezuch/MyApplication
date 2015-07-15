@@ -13,6 +13,11 @@ public class User extends RealmObject {
     private String password;
     private String login;
     private String urlAwatara;
+    private String male;
+    private int wiek;
+    private float waga;
+    private float wzrost;
+
 
 
 
@@ -54,5 +59,37 @@ public class User extends RealmObject {
 
     public void setUrlAwatara(String urlAwatara) {
         this.urlAwatara = urlAwatara;
+    }
+
+    public String getMale() {
+        return male;
+    }
+
+    public void setMale(String male) {
+        this.male = male;
+    }
+
+    public int getWiek() {
+        return wiek;
+    }
+
+    public float getWaga() {
+        return waga;
+    }
+
+    public float getWzrost() {
+        return wzrost;
+    }
+
+    public void setWiek(int wiek) {
+        this.wiek = wiek;
+    }
+
+    public void setWaga(float waga) {
+        this.waga = waga;
+    }
+
+    public void setWzrost(float wzrost) {
+        this.wzrost = wzrost;
     }
 }
