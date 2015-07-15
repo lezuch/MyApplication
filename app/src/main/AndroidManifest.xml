@@ -6,20 +6,18 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature
-
         android:name="android.hardware.camera"
         android:required="true" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:label="Logowanie" >
+            android:label="Logowanie"
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,6 +41,18 @@
         <activity
             android:name=".MyAccountActivity"
             android:label="@string/title_activity_my_account" >
+        </activity>
+        <activity
+            android:name=".CpmAcitivity"
+            android:label="@string/title_activity_cpm_acitivity" >
+        </activity>
+        <activity
+            android:name=".KalorieActivity"
+            android:label="@string/title_activity_kalorie" >
+        </activity>
+        <activity
+            android:name=".PostepyActivity"
+            android:label="@string/title_activity_postepy" >
         </activity>
     </application>
 

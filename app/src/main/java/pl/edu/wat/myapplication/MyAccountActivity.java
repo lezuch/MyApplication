@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ import me.iwf.photopicker.utils.PhotoPickerIntent;
 public class MyAccountActivity extends ActionBarActivity {
     private static final int ALERT_DIALOG1 = 1;
     ImageView avatar;
-    TextView  okno;
+    Button okno;
     int REQUEST_CODE;
 
     @Override
@@ -54,7 +55,7 @@ public class MyAccountActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
         avatar = (ImageView) findViewById(R.id.imageView2);
-        okno = (TextView) findViewById(R.id.Awatar);
+        okno = (Button) findViewById(R.id.Awatar);
         okno.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 showDialog(ALERT_DIALOG1);

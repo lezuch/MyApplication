@@ -74,6 +74,8 @@
 
         <Button
             android:text="Postępy"
+            android:id="@+id/postepy"
+            android:onClick="onPostępy"
             android:layout_width="110dp"
             android:layout_height="48dp"
 
@@ -81,6 +83,8 @@
         </Button>
         <Button
             android:text="CPM"
+            android:id="@+id/CPM"
+            android:onClick="onCPM"
             android:layout_width="110dp"
             android:layout_height="48dp"
 
@@ -88,6 +92,8 @@
         </Button>
         <Button
             android:text="Kalorie"
+            android:id="@+id/Kalorie"
+            android:onClick="onKalorie"
             android:layout_width="110dp"
             android:layout_height="48dp"
             >

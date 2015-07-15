@@ -106,4 +106,18 @@ public class LogowanieActivity extends ActionBarActivity {
     }
 
 
+    public void onKalorie(View view) {
+        Intent intent = new Intent(this, KalorieActivity.class);
+        startActivity(intent);
+    }
+
+    public void onCPM(View view) {
+        Intent intent = new Intent(this, CpmAcitivity.class);
+        startActivity(intent);
+    }
+
+    public void onPostępy(View view) {
+        Intent intent = new Intent(this, PostepyActivity.class);
+        startActivity(intent);
+    }
 }

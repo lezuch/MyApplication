@@ -127,6 +127,8 @@ public class DrawerActivity extends ActionBarActivity
             return true;
 
 
+
+
         }
         if (id == R.id.action_logout) {
             Intent intent3=new Intent(this, MainActivity.class);

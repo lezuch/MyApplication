@@ -37,4 +37,7 @@
     <string name="About">About</string>
     <string name="HintLogin">Login</string>
     <string name="HintPassword">Password</string>
+    <string name="title_activity_cpm_acitivity">CpmAcitivity</string>
+    <string name="title_activity_kalorie">KalorieActivity</string>
+    <string name="title_activity_postepy">PostepyActivity</string>
 </resources>
